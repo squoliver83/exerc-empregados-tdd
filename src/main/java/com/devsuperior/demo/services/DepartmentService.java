@@ -16,7 +16,7 @@ public class DepartmentService {
     @Autowired
     private DepartmentRepository repository;
 
-    public List<DepartmentDTO> findAll(){
+    public List<DepartmentDTO> findAll() {
         List<Department> list = repository.findAll(Sort.by("name"));
         return list.stream().map(DepartmentDTO::new).collect(Collectors.toList());
     }
